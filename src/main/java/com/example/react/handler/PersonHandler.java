@@ -31,6 +31,7 @@ public class PersonHandler {
     }
 
     public Mono<ServerResponse> list(ServerRequest request) {
+        log.info("Time is: " + LocalDate.now());
         return ServerResponse.ok()
                              .contentType(MediaType.APPLICATION_JSON)
                              .body(personRepository.all(), Person.class);

@@ -31,8 +31,8 @@ public class RouterConfiguration {
 
         return RouterFunctions
                 .route(GET_ALL_PERSONS, personHandler::list)
-                    .filter(RouterConfiguration::countRequests)
                 .andRoute(GET_PERSON_BY_ID, personHandler::get)
+                    .filter(RouterConfiguration::countRequests)
                     .filter(RouterConfiguration::logRequestCount);
     }
     //@formatter:on
